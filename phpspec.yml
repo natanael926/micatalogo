@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: MiCatalogo
+        psr4_prefix: MiCatalogo
         src_path: app
