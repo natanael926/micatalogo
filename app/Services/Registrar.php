@@ -1,6 +1,6 @@
-<?php namespace App\Services;
+<?php namespace MiCatalogo\Services;
 
-use App\User;
+use MiCatalogo\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
