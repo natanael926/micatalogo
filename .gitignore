@@ -1,6 +1,8 @@
 /vendor
 /node_modules
-.env
+.Primeva vesson
 .idea
 .idea/*
 composer.lock
+.env
+.openshift/*
