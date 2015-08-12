@@ -15,8 +15,16 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
+/*
+ * Url mantenimientos y administrador
+ */
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function(){
+        Route::resource('users', 'UserController');
+});
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
