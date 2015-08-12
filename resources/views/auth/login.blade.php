@@ -1,61 +1,50 @@
-@extends('app')
+@extends('layouts.login')
 
 @section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Login</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+    <div class="login-wrapper">
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
+        <div id="login" class="login loginpage col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-offset-2 col-xs-8">
+            <h1><a href="#" title="Login Page" tabindex="-1">Ultra Admin</a></h1>
 
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" name="remember"> Remember Me
-									</label>
-								</div>
-							</div>
-						</div>
+            <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">Login</button>
+                <p>
+                    <label for="user_login">E-mail<br />
+                        <input type="email" name="email" id="user_login" class="input" value="{{ old('email') }}" size="20"  /></label>
+                </p>
+                <p>
+                    <label for="user_pass">Password<br />
+                        <input type="password" name="password" id="user_pass" class="input" value="demo" size="20" /></label>
+                </p>
+                <p class="forgetmenot">
+                    <label class="icheck-label form-label" for="rememberme"><input name="remember" type="checkbox" id="rememberme" value="forever" class="skin-square-orange" checked> Remember me</label>
+                </p>
 
-								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+
+
+                <p class="submit">
+                    <input type="submit" name="wp-submit" id="wp-submit" class="btn btn-orange btn-block" value="Sign In" />
+                </p>
+            </form>
+
+            <p id="nav">
+                <a class="pull-left" href="{{ url('/password/email') }}" title="Password Lost and Found">Forgot password?</a>
+                <a class="pull-right" href="{{ url('/auth/register') }}" title="Sign Up">Sign Up</a>
+            </p>
+
+        </div>
+    </div>
 @endsection

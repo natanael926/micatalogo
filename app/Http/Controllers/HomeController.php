@@ -30,7 +30,7 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-        return Redirect::to('/admin/users');
+        return redirect('admin/users');
 	}
 
 }

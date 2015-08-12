@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html class=" ">
 <head>
-
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8" />
-    <title>@yield('title', 'Administrador')</title>
+    <title>Mi Catalogo : Login Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content="" name="description" />
     <meta content="" name="author" />
@@ -24,59 +23,49 @@
 
     {!! Html::style('css/admin/admin.css')  !!}
 
+    {!! Html::style('css/admin/orange.css')  !!}
+    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
+
 </head>
+<!-- END HEAD -->
 
-<body class=" ">
-
-
-<!-- START TOPBAR -->
-@include('layouts.admin.topbar')
-<!-- END TOPBAR -->
+<!-- BEGIN BODY -->
+<body class=" login_page">
 
 
 
-<!-- START CONTAINER -->
-<div class="page-container row-fluid">
-
-    <!-- SIDEBAR - START -->
-    @include('layouts.admin.sidebar')
-    <!--  SIDEBAR - END -->
+@yield('content')
 
 
-    <!-- START CONTENT -->
-    <section id="main-content" class=" ">
-        <section class="wrapper" style='margin-top:60px;display:inline-block;width:100%;padding:15px 0 0 15px;'>
 
-            @include('layouts.admin.pagetitle')
-
-            <div class="clearfix"></div>
-
-            @yield('content')
-
-        </section>
-    </section>
-
-    <!-- END CONTENT -->
-
-
-    @include('layouts.admin.page-chatapi')
-
-
-</div>
-<!-- END CONTAINER -->
-<!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
-
-
-<!-- Scripts -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 {!! Html::script('js/all.js') !!}
 
+
+<!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
+{!! Html::script('js/icheck.min.js') !!}
+
 <!-- General section box modal start -->
-   @include('layouts.admin.section-settings')
+<div class="modal" id="section-settings" tabindex="-1" role="dialog" aria-labelledby="ultraModal-Label" aria-hidden="true">
+    <div class="modal-dialog animated bounceInDown">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Section Settings</h4>
+            </div>
+            <div class="modal-body">
+
+                Body goes here...
+
+            </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                <button class="btn btn-success" type="button">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- modal end -->
 </body>
 </html>
-
-
-
