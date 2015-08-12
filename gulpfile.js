@@ -20,7 +20,11 @@ elixir(function(mix) {
         "resources/assets/css/admin/animate.min.css",
         "resources/assets/css/admin/perfect-scrollbar.css",
         "resources/assets/css/admin/style.css",
-        "resources/assets/css/admin/responsive.css"
+        "resources/assets/css/admin/responsive.css",
+        "resources/assets/css/admin/jquery.dataTables.min.css",
+        "resources/assets/css/admin/dataTables.tableTools.min.css",
+        "resources/assets/css/admin/dataTables.responsive.css",
+        "resources/assets/css/admin/dataTables.bootstrap.css"
     ], 'public/css/admin/admin.css');
 });
 
@@ -34,7 +38,13 @@ elixir(function(mix) {
         "resources/assets/js/admin/viewportchecker.js",
         "resources/assets/js/admin/scripts.js",
         "resources/assets/js/admin/jquery.sparkline.min.js",
-        "resources/assets/js/admin/chart-sparkline.js"
+        "resources/assets/js/admin/chart-sparkline.js",
+        "resources/assets/js/admin/jquery.dataTables.min.js",
+        "resources/assets/js/admin/dataTables.tableTools.min.js",
+        "resources/assets/js/admin/dataTables.responsive.min.js",
+        "resources/assets/js/admin/dataTables.bootstrap.js"
     ]);
 });
+
+
 
