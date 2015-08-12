@@ -305,7 +305,7 @@
                 <li class="profile">
                     <a href="#" data-toggle="dropdown" class="toggle">
                         <img src="data/profile/profile.png" alt="user-image" class="img-circle img-inline">
-                        <span>Jason Bourne <i class="fa fa-angle-down"></i></span>
+                        <span>{{ Auth::user()->name }} <i class="fa fa-angle-down"></i></span>
                     </a>
                     <ul class="dropdown-menu profile animated fadeIn">
                         <li>
@@ -327,7 +327,7 @@
                             </a>
                         </li>
                         <li class="last">
-                            <a href="ui-login.html">
+                            <a href="{{ url('/auth/logout') }}">
                                 <i class="fa fa-lock"></i>
                                 Logout
                             </a>
