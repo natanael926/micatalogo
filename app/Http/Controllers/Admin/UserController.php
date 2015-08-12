@@ -24,7 +24,10 @@ class UserController extends Controller {
 	 */
 	public function index()
 	{
-		return view('admin.user.index');
+        $title = 'Listado de usuarios';
+        $lineApp = array('admin', 'usuarios');
+
+		return view('admin.user.index', compact("title", "lineApp"));
 	}
 
 	/**
