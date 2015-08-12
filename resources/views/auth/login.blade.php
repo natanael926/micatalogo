@@ -21,8 +21,6 @@
                         'method' => 'POST',
                         'role'   => 'form')) !!}
 
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
                 <p>
                     {!! Form::label('user_login', 'E-mail'); !!}<br />
                     {!! Form::email('email', $value = old('email'), $attributes = array(
