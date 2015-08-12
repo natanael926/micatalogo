@@ -12,5 +12,29 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.less('app.less');
+    mix.styles([
+        "resources/assets/css/admin/pace-theme-flash.css",
+        //"resources/assets/css/admin/bootstrap.min.css",
+        //"resources/assets/css/admin/bootstrap-theme.min.css",
+        "resources/assets/css/admin/font-awesome.css",
+        "resources/assets/css/admin/animate.min.css",
+        "resources/assets/css/admin/perfect-scrollbar.css",
+        "resources/assets/css/admin/style.css",
+        "resources/assets/css/admin/responsive.css"
+    ], 'public/css/admin/admin.css');
 });
+
+
+elixir(function(mix) {
+    mix.scripts([
+        //"resources/assets/js/admin/jquery.easing.min.js",
+        //"resources/assets/js/admin/bootstrap.min.js",
+        "resources/assets/js/admin/pace.min.js",
+        "resources/assets/js/admin/perfect-scrollbar.min.js",
+        "resources/assets/js/admin/viewportchecker.js",
+        "resources/assets/js/admin/scripts.js",
+        "resources/assets/js/admin/jquery.sparkline.min.js",
+        "resources/assets/js/admin/chart-sparkline.js"
+    ]);
+});
+
