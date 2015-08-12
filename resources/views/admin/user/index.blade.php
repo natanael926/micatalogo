@@ -1,12 +1,10 @@
-@extends('app')
+@extends('layouts.admin.main')
 
 @section('title')
     Home
 @stop
 
 @section('content')
-    this is my home page
-    {{url('/')}}
+Lista Usuarios
 @stop
-
 
