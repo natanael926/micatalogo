@@ -36,7 +36,7 @@ elixir(function(mix) {
         "resources/assets/js/admin/pace.min.js",
         "resources/assets/js/admin/perfect-scrollbar.min.js",
         "resources/assets/js/admin/viewportchecker.js",
-        "resources/assets/js/admin/scripts.js",
+        //"resources/assets/js/admin/scripts.js",
         "resources/assets/js/admin/jquery.sparkline.min.js",
         "resources/assets/js/admin/chart-sparkline.js",
         "resources/assets/js/admin/jquery.dataTables.min.js",
@@ -45,6 +45,8 @@ elixir(function(mix) {
         "resources/assets/js/admin/dataTables.bootstrap.js"
     ]);
 });
+
+
 
 
 

@@ -4,13 +4,14 @@ use MiCatalogo\Http\Requests;
 use MiCatalogo\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use MiCatalogo\User;
 
 class UserController extends Controller {
 
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @return  void
      */
     public function __construct()
     {
@@ -24,10 +25,13 @@ class UserController extends Controller {
 	 */
 	public function index()
 	{
-        $title = 'Listado de usuarios';
-        $lineApp = array('admin', 'usuarios');
 
-		return view('admin.user.index', compact("title", "lineApp"));
+        $users = User::all();
+
+        $title = 'Listado de usuarios';
+        $lineApp = array('inicio', 'usuarios');
+
+		return view('admin.user.index', compact("users", "title", "lineApp"));
 	}
 
 	/**
