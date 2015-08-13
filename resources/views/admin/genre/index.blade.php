@@ -43,7 +43,6 @@
                                 <th>Nombre</th>
                                 <th>Descriccion</th>
                                 <th>
-
                                 </th>
                             </tr>
                             </tfoot>
@@ -55,10 +54,11 @@
                                     <td>{{ $genre->name  }}</td>
                                     <td>{{ $genre->description }}</td>
                                     <td>
-                                        {!! link_to('admin/genres/' . $genre->id . '/edit', $title = 'Editar', [], $secure = null); !!} |
-                                        {!! Form::open(array('url' => 'admin/genres/'.$genre->id)) !!}
-                                        {!! Form::hidden("_method", "DELETE") !!}
-                                        {!! Form::submit("Eliminar") !!}
+                                        {!! link_to('admin/genres/' . $genre->id . '/edit', $title = 'Editar', ['class' => 'btn btn-primary btn-xs'], $secure = null); !!}
+                                       {{--{!! link_to('admin/genres/' . $genre->id , $title = 'Eliminar', ['data-method' => "delete", "data-confirm" => "Are you sure you want to delete this?"], $secure = null); !!}--}}
+
+                                        {!! Form::open(['route' => ['admin.genres.destroy', $genre->id], 'method' => 'DELETE'])!!}
+                                          {!! Form::submit('Eliminar', ['class' => 'btn btn-danger btn-xs']) !!}
                                         {!! Form::close() !!}
                                     </td>
                                 </tr>
