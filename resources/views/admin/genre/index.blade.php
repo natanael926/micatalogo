@@ -5,14 +5,16 @@
 @stop
 
 @section('content')
-
-
-
     <div class="col-lg-12">
         <section class="box ">
 
             <header class="panel_header">
-                <h2 class="title pull-left">{{ $title  }}</h2>
+                <h2 class="title pull-left">{{ $title  }} </h2>
+                <div class="pull-right" style="margin: 8px;">
+                    <a href="{{ url('admin/genres/create') }}" class="btn btn-success">
+                        <i class="glyphicon glyphicon-plus-sign"></i>
+                    </a>
+                </div>
             </header>
 
             <div class="content-body">
@@ -26,6 +28,7 @@
                                 <th>Id</th>
                                 <th>Nombre</th>
                                 <th>Descriccion</th>
+                                <th></th>
                             </tr>
                             </thead>
 
@@ -34,6 +37,7 @@
                                 <th>Id</th>
                                 <th>Nombre</th>
                                 <th>Descriccion</th>
+                                <th></th>
                             </tr>
                             </tfoot>
 
@@ -43,6 +47,9 @@
                                     <td>{{ $genre->id  }}</td>
                                     <td>{{ $genre->name  }}</td>
                                     <td>{{ $genre->description }}</td>
+                                    <td>
+
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

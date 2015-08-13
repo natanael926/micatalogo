@@ -1738,10 +1738,7 @@ jQuery(function($) {
                 tableElement.dataTable({
                     "sDom": "<'row'<'col-md-6'l T><'col-md-6'f>r>t<'row'<'col-md-12'p i>>",
                     "oTableTools": {
-                        "aButtons": [{
-                            "sExtends": "text",
-                            "sButtonText": "<i class='fa fa-plus-circle add-new'></i>"
-                        }
+                        "aButtons": [
                         ]
                     },
                     "sPaginationType": "bootstrap",
@@ -1850,9 +1847,6 @@ jQuery(function($) {
                 });
 
             });
-
-
-
 
 
         }

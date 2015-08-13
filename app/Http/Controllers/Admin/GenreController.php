@@ -1,5 +1,6 @@
 <?php namespace MiCatalogo\Http\Controllers\admin;
 
+use Illuminate\Support\Facades\Redirect;
 use MiCatalogo\Http\Requests;
 use MiCatalogo\Http\Controllers\Controller;
 use MiCatalogo\Model\Genre as Genre;
@@ -40,17 +41,29 @@ class GenreController extends Controller {
 	 */
 	public function create()
 	{
-		//
+        $title = "Agregar nuevo genero";
+        $genre = new Genre();
+
+        return view('admin.genre.save', compact("title", "genre"));
 	}
 
 	/**
 	 * Store a newly created resource in storage.
 	 *
-	 * @return Response
+     * @param Request $request
+     * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+        $data = $request->all();
+
+        $ruls
+
+        $genre = new Genre($request->all());
+        $genre->save();
+
+        return Redirect::to('admin/genres');
+
 	}
 
 	/**
