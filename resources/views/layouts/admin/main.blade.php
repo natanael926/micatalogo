@@ -59,7 +59,7 @@
     <!-- END CONTENT -->
 
 
-    @include('layouts.admin.page-chatapi')
+    {{--@include('layouts.admin.page-chatapi')--}}
 
 
 </div>
@@ -71,6 +71,8 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 {!! Html::script('js/all.js') !!}
+{!! Html::script('js/scripts.js') !!}
+{!! Html::script('js/utilities.js') !!}
 
 <!-- General section box modal start -->
    @include('layouts.admin.section-settings')

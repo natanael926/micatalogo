@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://styde.net/crear-usuarios-con-laravel-y-eloquent/ -->
+<html lang="es-ES" class="laravel"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link href="./Crear usuarios con Laravel y Eloquent _ styde.net_files/css" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://styde.net/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://styde.net/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://styde.net/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://styde.net/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://styde.net/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://styde.net/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://styde.net/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://styde.net/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://styde.net/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="https://styde.net/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://styde.net/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="https://styde.net/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://styde.net/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="https://styde.net/manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script async="" src="./Crear usuarios con Laravel y Eloquent _ styde.net_files/saved_resource"></script><script async="" src="./Crear usuarios con Laravel y Eloquent _ styde.net_files/analytics.js"></script><script type="text/javascript" src="./Crear usuarios con Laravel y Eloquent _ styde.net_files/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/wp-content/themes/elmax/js/jquery1.11.2.min.js"><\/script>')</script>
+<title>Crear usuarios con Laravel y Eloquent | styde.net</title>
+<link rel="alternate" type="application/rss+xml" title="styde.net » Feed" href="https://styde.net/feed/">
+<link rel="alternate" type="application/rss+xml" title="styde.net » RSS de los comentarios" href="https://styde.net/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="styde.net » Crear usuarios con Laravel y Eloquent RSS de los comentarios" href="https://styde.net/crear-usuarios-con-laravel-y-eloquent/feed/">
+<link rel="stylesheet" id="pmpro_print-group-css" href="./Crear usuarios con Laravel y Eloquent _ styde.net_files/saved_resource(1)" type="text/css" media="print">
+<link rel="stylesheet" id="style-group-css" href="./Crear usuarios con Laravel y Eloquent _ styde.net_files/saved_resource(2)" type="text/css" media="all">
+<script type="text/javascript" src="./Crear usuarios con Laravel y Eloquent _ styde.net_files/saved_resource(3)"></script>
+<link rel="prev" title="Paginación con Laravel 5" href="https://styde.net/paginacion-con-laravel-5/">
+<link rel="next" title="Editar registros con Laravel 5" href="https://styde.net/editar-registros-con-laravel-5/">
+<meta name="generator" content="WordPress 4.2.4">
+<link rel="canonical" href="./Crear usuarios con Laravel y Eloquent _ styde.net_files/Crear usuarios con Laravel y Eloquent _ styde.net.html">
+<link rel="shortlink" href="https://styde.net/?p=1355">
+<meta name="description" content="En esta lección del curso de Laravel 5 aprenderemos a crear registros usando formularios y el ORM de Laravel Eloquent.">
+<title>Crear usuarios con Laravel y Eloquent | styde.net</title>
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<script type="text/javascript" async="" src="./Crear usuarios con Laravel y Eloquent _ styde.net_files/embed.js"></script><script async="" type="text/javascript" src="./Crear usuarios con Laravel y Eloquent _ styde.net_files/count.js"></script><script async="" src="./Crear usuarios con Laravel y Eloquent _ styde.net_files/count-data.js"></script><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+<body class="single single-post postid-1355 single-format-standard with-banner">
+	
+<div id="top-wrap" class="header">
+    <div id="top-inner">
+        <header id="branding" class="site-header" role="banner">
+            <div id="logo"><a href="https://styde.net/">Styde</a></div>
+            <nav id="site-navigation" class="main-navigation" role="navigation">
+                <div class="menu-toggle">
+                    <span class="navicon-burger"></span>
+                </div>
+                <a class="skip-link screen-reader-text" href="https://styde.net/crear-usuarios-con-laravel-y-eloquent/#content">Skip to content</a>
+                <div class="menu-menu-1-container">
+                    <ul id="menu-menu-1" class="menu">
+                        <li><a href="https://styde.net/proyectos">Series y cursos</a></li>
+                        <li><a href="https://styde.net/forma-parte">Formar parte</a></li>
+                                        </ul>
+                </div>
+            </nav>
+        </header>
+    <div class="clear"></div>
+    </div>
+</div>
+<aside class="banner">
+	<picture class="banner-image" style="position: fixed;">
+    <div class="wrap">
+  		<source srcset="/images/banners2/1x/curso-laravel-5.jpg,
+  							/images/banners2/2x/curso-laravel-5.jpg 2x">
+  		<img src="./Crear usuarios con Laravel y Eloquent _ styde.net_files/curso-laravel-5.jpg" height="auto" width="auto">
+    </div>
+	</picture>
+ 	<div id="wrap">
+  	<div id="masthead" class="site-header row">
+			<div class="banner-titles">
+				<h1>Crear usuarios con Laravel y Eloquent</h1>
+									<h2>
+              <a href="https://styde.net/laravel-5/">
+                  Curso básico de Laravel 5              </a>
+          </h2>
+					
+			</div>
+  	</div>
+ 	</div>
+</aside>
+<div class="body-main ">
+    <div id="wrap">
+        <div id="main">
+	
+	
+	<section id="content">
+		
+	
+        
+		<article id="post-1355" class="post-1355 post type-post status-publish format-standard hentry category-laravel-5 tag-eloquent tag-forms tag-laravel-5 series-curso-de-laravel-5">
+
+            						
+			<div class="entrymeta">
+	<p><i class="fa fa-user"></i> <span>Duilio</span> <i class="fa fa-calendar"></i> <span>28/02/2015</span> <i class="fa fa-folder-open"></i> <span><a href="https://styde.net/category/laravel-5/" rel="category tag">Laravel 5</a></span> <i class="fa fa-comments"></i> <span><a href="https://styde.net/crear-usuarios-con-laravel-y-eloquent/#disqus_thread" data-disqus-identifier="1355 http://duilio.me/?p=1355">28 Comentarios</a></span></p>
+</div>
+            
+<div class="text-right social-icons-tips">
+        <a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fstyde.net%2Fcrear-usuarios-con-laravel-y-eloquent%2F" data-share="facebook" target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
+    <a href="http://www.twitter.com/home?status=Crear%20usuarios%20con%20Laravel%20y%20Eloquent+https%3A%2F%2Fstyde.net%2Fcrear-usuarios-con-laravel-y-eloquent%2F+v%C3%ADa+%40StydeNet" data-share="twitter" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
+    <a href="https://plus.google.com/share?url=https%3A%2F%2Fstyde.net%2Fcrear-usuarios-con-laravel-y-eloquent%2F" data-share="google"><i class="fa fa-google-plus"></i> Google +1</a>
+</div>
+			
+			<p>Esta es la lección 14 del <a title="Curso de Laravel 5 desde cero" href="https://styde.net/laravel-5/">curso de Laravel 5</a>.</p>
+<p><a href="https://styde.net/wp-content/uploads/2015/02/laravel-bootstrap.png"><img class="aligncenter size-large wp-image-1363" src="./Crear usuarios con Laravel y Eloquent _ styde.net_files/laravel-bootstrap-1024x228.png" alt="laravel-bootstrap" width="640" height="143"></a></p>
+<p>Ya hemos creado nuestro <a href="https://styde.net/paginacion-con-laravel-5/">listado y paginación de usuarios</a>, ahora vamos a crear nuevos usuarios. &nbsp;En el siguiente video, aprenderemos como crear&nbsp;<strong>formularios con Laravel</strong> y a usar las rutas correctas para cada una de nuestras funciones, para ello nos apoyaremos con&nbsp;el comando: artisan route:list.&nbsp; Por supuesto, también utilizaremos&nbsp;el framework de CSS&nbsp;Twitter Bootstrap para ir aplicando&nbsp;estilos a nuestra aplicación.</p>
+<p>Por último, aprenderemos a&nbsp;encriptar contraseñas y a&nbsp;redireccionar a un usuario a una ruta específica.</p>
+<p><span id="more-1355"></span></p>
+<p align="center"><iframe width="560" height="315" src="./Crear usuarios con Laravel y Eloquent _ styde.net_files/x8FAKgnHgUg.html" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p><strong>Tutoriales recomendados:</strong></p>
+<ul>
+<li style="font-style: inherit; font-weight: inherit;"><a style="font-style: inherit; font-weight: inherit;" href="https://styde.net/aprende-a-escribir-rutas-con-laravel/">Aprende a escribir rutas con Laravel</a></li>
+<li style="font-style: inherit; font-weight: inherit;"><a style="font-style: inherit; font-weight: inherit;" href="https://styde.net/como-asociar-rutas-a-controladores-y-acciones-con-laravel/">Cómo asociar rutas a controladores y acciones con Laravel</a></li>
+<li style="font-style: inherit; font-weight: inherit;"><a style="font-style: inherit; font-weight: inherit;" href="http://getbootstrap.com/css/">Documentación Bootstrap – CSS (Documentación oficial)</a></li>
+<li><a href="http://laravel.com/docs/5.0/controllers" target="_blank">Http Controllers (Documentación oficial)</a></li>
+<li><a href="https://laracasts.com/series/laravel-5-fundamentals/episodes/10" target="_blank">Forms (Laracasts)</a></li>
+</ul>
+<p><strong style="font-style: inherit;">Para discutir en el&nbsp;<a style="font-style: inherit; font-weight: inherit;" href="https://aprendelaravel.slack.com/messages/general/">chat</a>:</strong></p>
+<ul>
+<li style="font-style: inherit; font-weight: inherit;">¿Cuál es la utilidad del comando php artisan route::list?</li>
+<li style="font-style: inherit; font-weight: inherit;">¿Para qué sirve la variable fillable?</li>
+</ul>
+<p><strong>Ejercicios:</strong></p>
+<ul>
+<li style="font-style: inherit; font-weight: inherit;">Agregar nuevos&nbsp;campos al módulo de usuarios</li>
+<li>Hacer el formulario para agregar el profile a un usuario</li>
+</ul>
+<p style="text-align: center;"><a href="https://twitter.com/sileence" target="_blank">Sígueme en Twitter</a></p>
+
+			
+            
+<div class="text-right social-icons-tips">
+        <h3>Por favor comparte:</h3>
+        <a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fstyde.net%2Fcrear-usuarios-con-laravel-y-eloquent%2F" data-share="facebook" target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
+    <a href="http://www.twitter.com/home?status=Crear%20usuarios%20con%20Laravel%20y%20Eloquent+https%3A%2F%2Fstyde.net%2Fcrear-usuarios-con-laravel-y-eloquent%2F+v%C3%ADa+%40StydeNet" data-share="twitter" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
+    <a href="https://plus.google.com/share?url=https%3A%2F%2Fstyde.net%2Fcrear-usuarios-con-laravel-y-eloquent%2F" data-share="google"><i class="fa fa-google-plus"></i> Google +1</a>
+</div>
+			<div class="p-tags"><a href="https://styde.net/tag/eloquent/" rel="tag">Eloquent</a><a href="https://styde.net/tag/forms/" rel="tag">Forms</a><a href="https://styde.net/tag/laravel-5/" rel="tag">Laravel 5</a></div>
+			
+			<nav class="post-navigation">
+				<div class="nav-previous">« <a href="https://styde.net/paginacion-con-laravel-5/" rel="prev">Paginación con Laravel 5</a></div>
+				<div class="nav-next"><a href="https://styde.net/editar-registros-con-laravel-5/" rel="next">Editar registros con Laravel 5</a> »</div>
+				<div class="clear"></div>
+			</nav>
+
+			
+		</article>
+
+	  
+<div id="disqus_thread"><iframe id="dsq-1" data-disqus-uid="1" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Crear usuarios con Laravel y Eloquent _ styde.net_files/saved_resource.html" style="width: 100% !important; border: none !important; overflow: hidden !important; height: 5517px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+    var disqus_url = 'https://styde.net/crear-usuarios-con-laravel-y-eloquent/';
+    var disqus_identifier = '1355 http://duilio.me/?p=1355';
+    var disqus_container_id = 'disqus_thread';
+    var disqus_domain = 'disqus.com';
+    var disqus_shortname = 'duilio';
+    var disqus_title = "Crear usuarios con Laravel y Eloquent";
+    var disqus_config = function () {
+        var config = this; // Access to the config object
+        config.language = '';
+
+        /* Add the ability to add javascript callbacks */
+        
+        /*
+           All currently supported events:
+            * preData — fires just before we request for initial data
+            * preInit - fires after we get initial data but before we load any dependencies
+            * onInit  - fires when all dependencies are resolved but before dtpl template is rendered
+            * afterRender - fires when template is rendered but before we show it
+            * onReady - everything is done
+         */
+
+        config.callbacks.preData.push(function() {
+            // clear out the container (its filled for SEO/legacy purposes)
+            document.getElementById(disqus_container_id).innerHTML = '';
+        });
+                config.callbacks.onReady.push(function() {
+            // sync comments in the background so we don't block the page
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = '?cf_action=sync_comments&post_id=1355';
+
+            var firstScript = document.getElementsByTagName( "script" )[0];
+            firstScript.parentNode.insertBefore(script, firstScript);
+        });
+                    };
+/* ]]> */
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+    var DsqLocal = {
+        'trackbacks': [
+        ],
+        'trackback_url': "https:\/\/styde.net\/crear-usuarios-con-laravel-y-eloquent\/trackback\/"    };
+/* ]]> */
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.' + 'disqus.com' + '/' + 'embed' + '.js' + '?pname=wordpress&pver=2.77';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+/* ]]> */
+</script>
+	
+	  	
+	</section>
+
+<section id="sidebar">
+<aside id="search" class="widget widget_search">
+    
+<form method="get" id="searchform" action="">
+	<label for="s" class="screen-reader-text">Search for:</label>
+	<input type="text" class="field" name="s" id="s" placeholder="Buscar">
+</form>
+<i class="fa fa-search"></i>
+</aside>
+<aside id="categories" class="widget">
+    <h4>Series y cursos</h4>
+            <ul>
+        <li><strong>Laravel y PHP</strong></li>
+                <li>
+            <a href="https://styde.net/curso-introductorio-laravel-5-1/">
+                Curso de Laravel 5.1            </a>
+        </li>
+                <li>
+            <a href="https://styde.net/cursos/crea-tu-primera-aplicacion-con-laravel-5/">
+                Crea una aplicación con Laravel 5            </a>
+        </li>
+                <li>
+            <a href="https://styde.net/laravel-5/">
+                Curso básico de Laravel 5            </a>
+        </li>
+                <li>
+            <a href="https://styde.net/php-y-programacion-orientada-a-objetos/">
+                PHP orientado a objetos            </a>
+        </li>
+                <li>
+            <a href="https://styde.net/instalacion-y-configuracion-de-entornos-de-trabajo/">
+                Instalación y configuración            </a>
+        </li>
+                <li>
+            <a href="https://styde.net/composer-manejador-paquetes-php/">
+                Composer            </a>
+        </li>
+                <li>
+            <a href="https://styde.net/laravel-desde-cero/">
+                Laravel desde cero            </a>
+        </li>
+                <li>
+            <a href="https://styde.net/paquetes-para-laravel/">
+                Componentes para Laravel            </a>
+        </li>
+                <li>
+            <a href="https://styde.net/vagrant-homestead/">
+                Vagrant y Homestead            </a>
+        </li>
+            </ul>
+        <ul>
+        <li><strong>Más series</strong></li>
+                <li>
+            <a href="https://styde.net/curso-de-programacion-orientada-a-objetos/">
+                Programación orienta a objetos            </a>
+        </li>
+                <li>
+            <a href="https://styde.net/aprende-git/">
+                Git            </a>
+        </li>
+                <li>
+            <a href="https://styde.net/aprende-front-end-css-sass/">
+                CSS con Sass            </a>
+        </li>
+                <li>
+            <a href="https://styde.net/curso-symfony-en-espanol/">
+                Curso introductorio de Symfony            </a>
+        </li>
+                <li>
+            <a href="https://styde.net/curso-de-diseno-responsive-rwd-introduccion/">
+                Curso de responsive design            </a>
+        </li>
+                <li>
+            <a href="https://styde.net/aprende-ruby-on-rails/">
+                Aprende Ruby on Rails            </a>
+        </li>
+                <li>
+            <a href="https://styde.net/lumen-la-version-micro-framework-de-laravel-php/">
+                Lumen            </a>
+        </li>
+                <li>
+            <a href="https://styde.net/laravel-bdd-codeception/">
+                Laravel y Codeception            </a>
+        </li>
+            </ul>
+    </aside>
+		<div class="widget widget_recent_entries">		<h4>Entradas recientes</h4>		<ul>
+					<li>
+				<a href="https://styde.net/creando-formularios-con-el-paquete-styde-html/">Creando formularios con el paquete Styde/Html</a>
+							<span class="post-date">12/08/2015</span>
+						</li>
+					<li>
+				<a href="https://styde.net/concurrencia-y-persistencia-en-programacion-orientada-a-objetos/">Concurrencia y Persistencia en Programación Orientada a Objetos</a>
+							<span class="post-date">10/08/2015</span>
+						</li>
+					<li>
+				<a href="https://styde.net/configuracion-de-homestead-en-windows-10/">Configuración de Homestead en Windows 10</a>
+							<span class="post-date">08/08/2015</span>
+						</li>
+					<li>
+				<a href="https://styde.net/instalacion-del-paquete-styde-html/">Instalación del paquete Styde\Html</a>
+							<span class="post-date">04/08/2015</span>
+						</li>
+					<li>
+				<a href="https://styde.net/como-funcionan-las-pruebas-de-integracion-en-laravel-5-1/">Cómo funcionan las pruebas de integración en Laravel 5.1</a>
+							<span class="post-date">03/08/2015</span>
+						</li>
+				</ul>
+		</div>    <div class="widget widget_recent_comments"><h4>Comentarios recientes</h4><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">Roberto Figuera Espinoza</span> en <a href="https://styde.net/instalacion-del-paquete-styde-html/#comment-2609">Instalación del paquete Styde\Html</a></li><li class="recentcomments"><span class="comment-author-link">Chuy Lozano</span> en <a href="https://styde.net/creando-formularios-con-el-paquete-styde-html/#comment-2608">Creando formularios con el paquete Styde/Html</a></li><li class="recentcomments"><span class="comment-author-link">Juan Hernande</span> en <a href="https://styde.net/sistema-de-autenticacion-en-laravel-5-1/#comment-2607">Sistema de autenticación en Laravel 5.1</a></li><li class="recentcomments"><span class="comment-author-link">Gerardo Martinez</span> en <a href="https://styde.net/instalacion-de-composer-y-laravel-en-ubuntu-14-lts-paso-a-paso/#comment-2606">Instalación de Composer y Laravel en Ubuntu 14 LTS</a></li><li class="recentcomments"><span class="comment-author-link">Daniel E Delgado D</span> en <a href="https://styde.net/laravel-5/#comment-2605">Curso de Laravel 5 en español desde cero</a></li></ul></div>	
+</section></div><!-- !wrap -->
+<div class="clear"></div>
+</div><!-- !body-main -->
+
+	<footer class="footer">
+	     <div id="wrap">	
+
+			 <div class="col6">
+
+			    <h3 id="logo"><a href="https://styde.net/">Styde</a></h3>
+			    <div class="clear"></div>
+
+			    <p>
+                    Styde es una nueva comunidad de desarrollo web en español.
+                    Con nosotros podrás aprender Laravel, PHP y otras tecnologías,
+                    desde tutoriales básicos gratuitos hasta cursos avanzados a bajo costo,
+                    de la mano de profesionales con años de experiencia que te brindarán asesorías personalizadas.
+			    </p>
+
+				<p class="copy">© 2015 Styde.net</p>
+
+             </div>
+
+             <div class="col6 colr">
+
+				<h4>Sigue en contacto</h4>
+
+				<section class="sidebar">
+				<form class="form" action="https://duilio.us10.list-manage.com/subscribe/post?u=48f2082df849a26cc23d85517&id=c6fa450847" method="post" target="_blank">
+
+				<input id="mce-EMAIL" name="EMAIL" type="text" required="" placeholder="Tu e-mail">
+				<input id="mce-NAME" name="NAME" type="text" required="" placeholder="Tu nombre">
+
+				<div style="position: absolute; left: -5000px;"><input tabindex="-1" name="b_48f2082df849a26cc23d85517_c6fa450847" type="text" value=""></div>
+
+				<input class="button bg-theme" name="subscribe" type="submit" value="Suscríbete">
+
+				</form>
+
+				</section>
+
+				<div class="seguir">
+				    <nav class="social">
+				        <a href="https://twitter.com/StydeNet" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+				        				        <a href="https://www.facebook.com/Stydenet" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+				        <a href="https://www.youtube.com/user/silencedsg/videos" class="youtube" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                        <a href="https://disqus.com/home/forum/duilio/" class="disqus" target="_blank"><i class="fa fa-comments"></i></a>
+                        <a href="https://styde.net/feed/" class="rss" target="_blank"><i class="fa fa-rss"></i></a>
+                        <a href="https://www.github.com/StydeNet" class="github" target="_blank"><i class="fa fa-github"></i></a>
+				    </nav>
+				</div>
+
+             </div>
+         <div class="clear"></div>
+	   </div>
+	</footer>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-53635204-2', 'auto');
+    ga('send', 'pageview');
+
+</script>
+    <script type="text/javascript">
+    // <![CDATA[
+        var disqus_shortname = 'duilio';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1) {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('rel'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) url = url[0];
+                    else url = url[1]
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    //]]>
+    </script>
+		<!-- Memberships powered by Paid Memberships Pro v1.8.3.1.
+ -->
+		<script type="text/javascript" src="./Crear usuarios con Laravel y Eloquent _ styde.net_files/saved_resource(4)"></script>
+
+
+<!-- Dynamic page generated in 0.667 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2015-08-13 00:00:46 -->
+
+<!-- super cache --></div></body></html>
