@@ -1,11 +1,12 @@
 <?php namespace MiCatalogo\Http\Controllers\admin;
 
-use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use MiCatalogo\Http\Requests;
 use MiCatalogo\Http\Controllers\Controller;
 use MiCatalogo\Model\Genre as Genre;
 
-use Illuminate\Http\Request;
+use MiCatalogo\Http\Requests\CreateGenreRequest;
+use MiCatalogo\Http\Requests\EditGenreRequest;
 
 class GenreController extends Controller {
 
@@ -44,26 +45,20 @@ class GenreController extends Controller {
         $title = "Agregar nuevo genero";
         $genre = new Genre();
 
-        return view('admin.genre.save', compact("title", "genre"));
+        return view('admin.genre.create', compact("title", "genre"));
 	}
 
 	/**
 	 * Store a newly created resource in storage.
 	 *
-     * @param Request $request
+     * @param CreateGenreRequest $request
      * @return Response
 	 */
-	public function store(Request $request)
+	public function store(CreateGenreRequest $request)
 	{
-        $data = $request->all();
+        Genre::create($request->all());
 
-        $ruls
-
-        $genre = new Genre($request->all());
-        $genre->save();
-
-        return Redirect::to('admin/genres');
-
+        return \Redirect::to('admin/genres')->with('message', 'El genero ha sido agregado.');
 	}
 
 	/**
@@ -74,7 +69,7 @@ class GenreController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		dd($id);
 	}
 
 	/**
@@ -85,7 +80,11 @@ class GenreController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+
+        $genre = Genre::find($id);
+        $title = "Editar el genero '" . $genre->name . "'";
+
+        return view('admin.genre.edit', compact("title", "genre"));
 	}
 
 	/**
@@ -94,9 +93,15 @@ class GenreController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(EditGenreRequest $request, $id)
 	{
-		//
+		$genre = Genre::findOrFail($id);
+
+        $genre->fill($request->all());
+        $genre->save();
+
+        Session::flash('message','El registro No. ' .$genre->id . 'se actualizo.');
+        return redirect()->back();
 	}
 
 	/**
@@ -107,7 +112,13 @@ class GenreController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+        $genre = Genre::findOrFail($id);
+
+        $genre->delete();
+
+        Session::flash('message', $genre->name . ' fue eliminado de nuestros registros.');
+
+        return redirect()->route('admin.genres.index');
 	}
 
 }

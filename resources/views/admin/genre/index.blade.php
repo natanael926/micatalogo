@@ -6,6 +6,11 @@
 
 @section('content')
     <div class="col-lg-12">
+
+        @if(Session::has('message'))
+            <p class="alert alert-success"> <strong> {{ Session::get('message') }} </strong> </p>
+        @endif
+
         <section class="box ">
 
             <header class="panel_header">
@@ -37,7 +42,9 @@
                                 <th>Id</th>
                                 <th>Nombre</th>
                                 <th>Descriccion</th>
-                                <th></th>
+                                <th>
+
+                                </th>
                             </tr>
                             </tfoot>
 
@@ -48,7 +55,11 @@
                                     <td>{{ $genre->name  }}</td>
                                     <td>{{ $genre->description }}</td>
                                     <td>
-
+                                        {!! link_to('admin/genres/' . $genre->id . '/edit', $title = 'Editar', [], $secure = null); !!} |
+                                        {!! Form::open(array('url' => 'admin/genres/'.$genre->id)) !!}
+                                        {!! Form::hidden("_method", "DELETE") !!}
+                                        {!! Form::submit("Eliminar") !!}
+                                        {!! Form::close() !!}
                                     </td>
                                 </tr>
                             @endforeach
