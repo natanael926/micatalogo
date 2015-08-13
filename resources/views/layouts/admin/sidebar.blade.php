@@ -26,7 +26,7 @@
                 </a>
                 <ul class="sub-menu" >
                     <li>
-                        <a class="" href="ui-typography.html">Genero</a>
+                        <a href="{{ url('/admin/genres') }}">Genero</a>
                     </li>
                 </ul>
             </li>
