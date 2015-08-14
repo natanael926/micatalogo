@@ -10,6 +10,9 @@ use MiCatalogo\Http\Requests\EditGenreRequest;
 
 class GenreController extends Controller {
 
+
+    const MENU = 'genre';
+
     /**
      * Create a new controller instance.
      *
@@ -31,8 +34,9 @@ class GenreController extends Controller {
 
         $title = 'Generos';
         $lineApp = array('inicio', 'generos');
+        $menu = self::MENU;
 
-        return view('admin.genre.index', compact("genres", "title", "lineApp"));
+        return view('admin.genre.index', compact("genres", "title", "lineApp", "menu"));
 	}
 
 	/**
@@ -44,8 +48,9 @@ class GenreController extends Controller {
 	{
         $title = "Agregar nuevo genero";
         $genre = new Genre();
+        $menu = self::MENU;
 
-        return view('admin.genre.create', compact("title", "genre"));
+        return view('admin.genre.create', compact("title", "genre", "menu"));
 	}
 
 	/**
@@ -83,8 +88,9 @@ class GenreController extends Controller {
 
         $genre = Genre::find($id);
         $title = "Editar el genero '" . $genre->name . "'";
+        $menu = self::MENU;
 
-        return view('admin.genre.edit', compact("title", "genre"));
+        return view('admin.genre.edit', compact("title", "genre", "menu"));
 	}
 
 	/**

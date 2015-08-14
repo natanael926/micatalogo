@@ -8,6 +8,8 @@ use MiCatalogo\User;
 
 class UserController extends Controller {
 
+    const MENU = 'user';
+
     /**
      * Create a new controller instance.
      *
@@ -30,8 +32,9 @@ class UserController extends Controller {
 
         $title = 'Listado de usuarios';
         $lineApp = array('inicio', 'usuarios');
+        $menu = self::MENU;
 
-		return view('admin.user.index', compact("users", "title", "lineApp"));
+		return view('admin.user.index', compact("users", "title", "lineApp", "menu"));
 	}
 
 	/**
