@@ -1,5 +1,8 @@
 /vendor
 /node_modules
+/micatalogo.sublime-project
+/micatalogo.sublime-workspace
+Vagrantfile
 .Primeva vesson
 .idea
 .idea/*
