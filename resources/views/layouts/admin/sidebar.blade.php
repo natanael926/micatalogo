@@ -12,21 +12,21 @@
                     <span class="title">Dashboard</span>
                 </a>
             </li>
-            <li class="open">
+            <li @if($menu == 'user') class="open" @endif>
                 <a href="{{ url('/admin/users') }}">
                     <i class="fa fa-users"></i>
                     <span class="title">Usuarios</span>
                 </a>
             </li>
-            <li class="">
+            <li @if($menu == 'genre')  class="open" @endif>
                 <a href="javascript:;">
                     <i class="fa fa-cogs"></i>
                     <span class="title">Mantenimientos</span>
                     <span class="arrow "></span>
                 </a>
-                <ul class="sub-menu" >
+                <ul class="sub-menu" @if($menu == 'genre')  style="display:block;" @endif>
                     <li>
-                        <a href="{{ url('/admin/genres') }}">Genero</a>
+                        <a href="{{ url('/admin/genres') }}" @if($menu == 'genre') class="active" @endif>Genero</a>
                     </li>
                 </ul>
             </li>
