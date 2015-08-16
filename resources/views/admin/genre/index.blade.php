@@ -42,8 +42,7 @@
                                 <th>Id</th>
                                 <th>Nombre</th>
                                 <th>Descriccion</th>
-                                <th>
-                                </th>
+                                <th></th>
                             </tr>
                             </tfoot>
 

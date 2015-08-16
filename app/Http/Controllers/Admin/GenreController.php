@@ -22,7 +22,7 @@ class GenreController extends Controller {
     /**
      * 
      * 
-     * @var array
+     * @var array Link of travel app
      */
    	private $timeLine = [['Dashboard' => 'admin/dashboard'], ['Generos' => null]];
 
