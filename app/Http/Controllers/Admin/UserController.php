@@ -8,6 +8,15 @@ use MiCatalogo\User;
 
 class UserController extends Controller {
 
+    const MENU = 'user';
+    const SECTION_TITLE = 'Usuarios';
+    
+    /**
+     * 
+     * @var array Link of travel app
+     */
+    private $timeLine = [['Dashboard' => 'admin/dashboard'], ['Usuarios' => null]];
+
     /**
      * Create a new controller instance.
      *
@@ -30,8 +39,12 @@ class UserController extends Controller {
 
         $title = 'Listado de usuarios';
         $lineApp = array('inicio', 'usuarios');
+        $menu = self::MENU;
+        $sectionTitle = self::SECTION_TITLE;
 
-		return view('admin.user.index', compact("users", "title", "lineApp"));
+        $lineTime = $this->timeLine;
+
+		return view('admin.user.index', compact("users", "title", "lineApp", "menu", "sectionTitle", "lineTime"));
 	}
 
 	/**

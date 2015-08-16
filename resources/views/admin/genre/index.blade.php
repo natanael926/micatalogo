@@ -42,8 +42,7 @@
                                 <th>Id</th>
                                 <th>Nombre</th>
                                 <th>Descriccion</th>
-                                <th>
-                                </th>
+                                <th></th>
                             </tr>
                             </tfoot>
 
@@ -55,8 +54,6 @@
                                     <td>{{ $genre->description }}</td>
                                     <td>
                                         {!! link_to('admin/genres/' . $genre->id . '/edit', $title = 'Editar', ['class' => 'btn btn-primary btn-xs'], $secure = null); !!}
-                                       {{--{!! link_to('admin/genres/' . $genre->id , $title = 'Eliminar', ['data-method' => "delete", "data-confirm" => "Are you sure you want to delete this?"], $secure = null); !!}--}}
-
                                         {!! Form::open(['route' => ['admin.genres.destroy', $genre->id], 'method' => 'DELETE'])!!}
                                           {!! Form::submit('Eliminar', ['class' => 'btn btn-danger btn-xs']) !!}
                                         {!! Form::close() !!}

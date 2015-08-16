@@ -2,22 +2,30 @@
     <div class="page-title">
 
         <div class="pull-left">
-            <h1 class="title">@yield('title-session', 'Title Section')</h1>
+            <h1 class="title">{{ $sectionTitle }}</h1>
         </div>
-
+            
+        @if(isset($lineTime))
         <div class="pull-right hidden-xs">
             <ol class="breadcrumb">
-                <li>
-                    <a href="index.html"><i class="fa fa-home"></i>Home</a>
-                </li>
-                <li>
-                    <a href="tables-basic.html">Tables</a>
-                </li>
-                <li class="active">
-                    <strong>Basic tables</strong>
-                </li>
+               @foreach($lineTime as $link)               
+                    @if(key(\Helper::getFirstValueInArray($lineTime)) == key($link))
+                        <li>
+                            <a href={{ url($link[key($link)]) }}><i class="fa fa-home"></i>{{ key($link) }}</a>
+                        </li>
+                    @elseif(key(\Helper::getLastValueInArray($lineTime)) == key($link))
+                        <li class="active">
+                                <strong>{{ key($link) }}</strong>
+                        </li>
+                    @else
+                        <li>
+                            <a href={{ url($link[key($link)]) }}>{{ key($link) }}</a>
+                        </li>
+                    @endif           
+                @endforeach
             </ol>
         </div>
+        @endif
 
     </div>
 </div>

@@ -8,7 +8,23 @@ use MiCatalogo\Model\Genre as Genre;
 use MiCatalogo\Http\Requests\CreateGenreRequest;
 use MiCatalogo\Http\Requests\EditGenreRequest;
 
+/**
+ * Class GenreController
+ *
+ * @user Rudys Natanael Acosta <natanael926@gmail.com>
+ * @package MiCatalogo\Http\Controllers\admin
+ */
 class GenreController extends Controller {
+
+    const MENU = 'genre';
+    const SECTION_TITLE = 'Generos';
+
+    /**
+     * 
+     * 
+     * @var array Link of travel app
+     */
+   	private $timeLine = [['Dashboard' => 'admin/dashboard'], ['Generos' => null]];
 
     /**
      * Create a new controller instance.
@@ -31,8 +47,12 @@ class GenreController extends Controller {
 
         $title = 'Generos';
         $lineApp = array('inicio', 'generos');
+        $menu = self::MENU;
+        $sectionTitle = self::SECTION_TITLE;
 
-        return view('admin.genre.index', compact("genres", "title", "lineApp"));
+        $lineTime = $this->timeLine;
+
+        return view('admin.genre.index', compact("genres", "title", "lineApp", "menu", "sectionTitle", "lineTime"));
 	}
 
 	/**
@@ -42,10 +62,17 @@ class GenreController extends Controller {
 	 */
 	public function create()
 	{
+
         $title = "Agregar nuevo genero";
         $genre = new Genre();
+        $menu = self::MENU;
+        $sectionTitle = self::SECTION_TITLE;
 
-        return view('admin.genre.create', compact("title", "genre"));
+		array_set($this->timeLine[1], 'Generos', 'admin/genres');
+        array_push($this->timeLine, ['Crear' => null]);
+        $lineTime = $this->timeLine;
+
+        return view('admin.genre.create', compact("title", "genre", "menu", "sectionTitle", "lineTime"));
 	}
 
 	/**
@@ -83,8 +110,14 @@ class GenreController extends Controller {
 
         $genre = Genre::find($id);
         $title = "Editar el genero '" . $genre->name . "'";
+        $menu = self::MENU;
+        $sectionTitle = self::SECTION_TITLE;
 
-        return view('admin.genre.edit', compact("title", "genre"));
+        array_set($this->timeLine[1], 'Generos', 'admin/genres');
+        array_push($this->timeLine, ['Editar' => null]);
+        $lineTime = $this->timeLine;
+
+        return view('admin.genre.edit', compact("title", "genre", "menu", "sectionTitle", "lineTime"));
 	}
 
 	/**
