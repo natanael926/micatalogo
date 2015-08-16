@@ -6,13 +6,6 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 
 abstract class Controller extends BaseController {
 
-    /**
-     * @var array
-     */
-    protected $_timeLine = ['Dashboard'  => null];
-
 	use DispatchesCommands, ValidatesRequests;
-
-
 
 }

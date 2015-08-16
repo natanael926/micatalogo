@@ -8,26 +8,20 @@
         @if(isset($lineTime))
         <div class="pull-right hidden-xs">
             <ol class="breadcrumb">
-                {{ $i = 0 }}
-                @foreach($lineTime as $title => $link)
-                    
-                   Title: {{ $title }}
-
-
-
-
-                    {{--<li>--}}
-
-                            {{--<a href="index.html"><i class="fa fa-home"></i>Home</a>--}}
-
-                            {{--<a href="tables-basic.html">Tables</a>--}}
-
-                    {{--</li>--}}
-                {{--<li>--}}
-                {{--</li>--}}
-                {{--<li class="active">--}}
-                    {{--<strong>Basic tables</strong>--}}
-                {{--</li>--}}
+               @foreach($lineTime as $link)               
+                    @if(key(\Helper::getFirstValueInArray($lineTime)) == key($link))
+                        <li>
+                            <a href={{ url($link[key($link)]) }}><i class="fa fa-home"></i>{{ key($link) }}</a>
+                        </li>
+                    @elseif(key(\Helper::getLastValueInArray($lineTime)) == key($link))
+                        <li class="active">
+                                <strong>{{ key($link) }}</strong>
+                        </li>
+                    @else
+                        <li>
+                            <a href={{ url($link[key($link)]) }}>{{ key($link) }}</a>
+                        </li>
+                    @endif           
                 @endforeach
             </ol>
         </div>

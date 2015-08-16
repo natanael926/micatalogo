@@ -20,6 +20,13 @@ class GenreController extends Controller {
     const SECTION_TITLE = 'Generos';
 
     /**
+     * 
+     * 
+     * @var array
+     */
+   	private $timeLine = [['Dashboard' => 'admin/dashboard'], ['Generos' => null]];
+
+    /**
      * Create a new controller instance.
      *
      * @return  void
@@ -27,9 +34,6 @@ class GenreController extends Controller {
     public function __construct()
     {
         $this->middleware('auth');
-
-        array_set($this->_timeLine, 'Dashboard', 'admin/dashboard');
-
     }
 
 	/**
@@ -45,9 +49,8 @@ class GenreController extends Controller {
         $lineApp = array('inicio', 'generos');
         $menu = self::MENU;
         $sectionTitle = self::SECTION_TITLE;
-        $lineTime =  array_add($this->_timeLine, 'Generos', null);
 
-
+        $lineTime = $this->timeLine;
 
         return view('admin.genre.index', compact("genres", "title", "lineApp", "menu", "sectionTitle", "lineTime"));
 	}
@@ -65,8 +68,9 @@ class GenreController extends Controller {
         $menu = self::MENU;
         $sectionTitle = self::SECTION_TITLE;
 
-        array_set($this->_timeLine, 'Generos', 'admin/genres');
-        $lineTime = array_add($this->_timeLine, 'Agregar genero', null);
+		array_set($this->timeLine[1], 'Generos', 'admin/genres');
+        array_push($this->timeLine, ['Crear' => null]);
+        $lineTime = $this->timeLine;
 
         return view('admin.genre.create', compact("title", "genre", "menu", "sectionTitle", "lineTime"));
 	}
@@ -109,8 +113,9 @@ class GenreController extends Controller {
         $menu = self::MENU;
         $sectionTitle = self::SECTION_TITLE;
 
-        array_set($this->_timeLine, 'Generos', 'admin/genres');
-        $lineTime =  array_add($this->_timeLine, 'Editar genero', null);
+        array_set($this->timeLine[1], 'Generos', 'admin/genres');
+        array_push($this->timeLine, ['Editar' => null]);
+        $lineTime = $this->timeLine;
 
         return view('admin.genre.edit', compact("title", "genre", "menu", "sectionTitle", "lineTime"));
 	}
